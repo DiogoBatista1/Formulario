@@ -9,7 +9,7 @@ public class FormularioModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(name = "nome", nullable = false)
     private String nome;
 
     @Column(unique = true)
@@ -20,7 +20,7 @@ public class FormularioModel {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String mensagem;
 
-    private String arquivoUrl;
+    private String arquivo_url;  
 
     public FormularioModel(){
     }
@@ -35,7 +35,15 @@ public class FormularioModel {
         this.id = id;
     }
 
-    public String getEmail() {
+    public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getEmail() {
         return email;
     }
 
@@ -59,11 +67,12 @@ public class FormularioModel {
         this.mensagem = mensagem;
     }
 
-    public String getArquivoUrl() {
-        return arquivoUrl;
-    }
+	public String getArquivo_url() {
+		return arquivo_url;
+	}
 
-    public void setArquivoUrl(String arquivoUrl) {
-        this.arquivoUrl = arquivoUrl;
-    }
+	public void setArquivo_url(String arquivo_url) {
+		this.arquivo_url = arquivo_url;
+	}
+
 }
