@@ -14,7 +14,7 @@
             <input type="text" id="nome" name="nome" required />
 
             <label for="email"> Email *</label>
-            <input type="text" id="email" name="email" required />
+            <input type="email" id="email" name="email" required />
 
 
             <label for="telefone"> telefone *</label>
@@ -29,14 +29,14 @@
         <div id="resposta" class="mensagem-oculta">
             Enviaremos o orçamento por email e whatsapp!
         </div>
-
-        <div id="popup" class="popup-ocult">
-            <div class="popup-content">
+		<div id="popup-overlay" style="display: none;">
+            <div id="popup" class="popup-content">
                 <h2>Obrigado por entrar em contato!</h2>
                 <p>Enviaremos sua resposta em breve.</p>
-                <button type="button" onclick="closePopup()">Fechar</button>
+                <button type="button" onclick="fecharPopup()">Fechar</button>
             </div>
-        </div>
+		</div>
+        
     </div>
     <script src="/js/script.js"></script>
 </body>

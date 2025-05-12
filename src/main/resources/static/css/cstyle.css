@@ -63,20 +63,27 @@ button[type="submit"]:hover {
     font-weight: bold;
 }
 
+#popup-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5); 
+	display: none;
+	align-items: center;
+	justify-content: center;
+	z-index: 999;
+}
+
 @media (max-width: 600px) {
     .container {
         padding: 20px
     }
 }
 
-.popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    max-width: 400px;
+#popup {
+	 display: block;
 }
 
 .popup-content {
@@ -110,3 +117,4 @@ button[type="submit"]:hover {
 .popup-ocult {
     display: none;
 }
+
