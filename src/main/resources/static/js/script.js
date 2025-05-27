@@ -93,6 +93,39 @@ document.getElementById("contact-form").addEventListener("submit", async functio
 });
 
 
+document.getElementById("gerarpdf").addEventListener("click", function () {
+        const nome = document.getElementById("nome").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const telefone = document.getElementById("telefone").value.trim();
+        const mensagem = document.getElementById("mensagem").value.trim();
+
+        if (!nome || !email) {
+            alert("Preencha nome, email e mensagem para gerar o PDF.");
+            return;
+        }
+
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+
+        doc.setFontSize(14);
+        doc.text("Formulário de Contato", 10, 10);
+        doc.setFontSize(12);
+        doc.text(`Nome: ${nome}`, 10, 20);
+        doc.text(`Email: ${email}`, 10, 30);
+        let y = 40;
+        if (telefone) {
+            doc.text(`Telefone: ${telefone}`, 10, y);
+            y += 10;
+        }
+        doc.text("Mensagem:", 10, y);
+        const textMensagem = doc.splitTextToSize(mensagem, 180);
+        doc.text(textMensagem, 10, y + 10);
+
+        const safeNome = nome.replace(/[^a-zA-Z0-9]/g, "_");
+        const filename = `formulario_${safeNome}_${Date.now()}.pdf`;
+        doc.save(filename);
+		});
+
 function fecharPopup() {
     document.getElementById("popup-overlay").style.display = 'none';
 }

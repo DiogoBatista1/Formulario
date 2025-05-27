@@ -63,7 +63,7 @@ textarea:focus {
 	border-radius: 8px;
 }
 
-button[type="submit"] {
+.submitBtn {
     background-color:#007BFF;
     color: white;
     padding: 12px;
@@ -71,11 +71,17 @@ button[type="submit"] {
     border-radius: 6px;
     font-size: 1em;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+	transition: background-color 0.3s ease, transform 0.2s ease;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-button[type="submit"]:hover {
+.submitBtn:hover {
     background-color: #0056B3;
+	transform: scale(1.03);
+}
+
+.submitBtn:active {
+    transform: scale(0.98);
 }
 
 #resposta {
@@ -133,9 +139,33 @@ button[type="submit"]:hover {
 
 .popup-content button:hover {
     background-color: #0056B3;
+	transform: scale(1.03);
 }
 
 .popup-ocult {
     display: none;
+}
+
+
+.botao-pdf {
+    background-color: #007BFF; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.botao-pdf:hover {
+    background-color: #4da6ff; 
+    transform: scale(1.03);
+}
+
+.botao-pdf:active {
+    transform: scale(0.98);
 }
 
